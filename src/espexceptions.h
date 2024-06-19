@@ -6,6 +6,10 @@
 
 namespace ESP {
 
+class FileMissingException : public std::runtime_error {
+  public:
+    FileMissingException(const std::string &message) : std::runtime_error(message) {}
+};
 
 class InvalidRecordException : public std::runtime_error {
 public:

@@ -32,6 +32,7 @@ public:
   Record readRecord();
 
   bool isMaster() const;
+  bool isMedium() const;
   bool isLight() const;
   bool isDummy() const;
 

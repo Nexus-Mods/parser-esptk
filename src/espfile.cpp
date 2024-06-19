@@ -150,6 +150,11 @@ bool ESP::File::isLight() const
   return m_MainRecord.flagSet(Record::FLAG_LIGHT);
 }
 
+bool ESP::File::isMedium() const
+{
+  return m_MainRecord.flagSet(Record::FLAG_MEDIUM);
+}
+
 bool ESP::File::isDummy() const
 {
   return m_Header.numRecords == 0;
