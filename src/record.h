@@ -20,8 +20,9 @@ public:
   enum EFlag {
     FLAG_MASTER     = 0x00000001,
     FLAG_LOCALIZED  = 0x00000080,
+    SF_FLAG_LIGHT   = 0x00000100,
     FLAG_LIGHT      = 0x00000200,
-    FLAG_MEDIUM     = 0x00000800,
+    FLAG_MEDIUM     = 0x00000400,
     FLAG_COMPRESSED = 0x00040000,
   };
 
@@ -56,7 +57,6 @@ private:
   std::vector<uint8_t> m_Data;
 
   bool m_OblivionStyle;
-
 };
 
 }

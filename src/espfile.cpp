@@ -147,6 +147,9 @@ bool ESP::File::isMaster() const
 
 bool ESP::File::isLight() const
 {
+  if (m_Header.version >= 0.96f ) {
+    return m_MainRecord.flagSet(Record::SF_FLAG_LIGHT);
+  }
   return m_MainRecord.flagSet(Record::FLAG_LIGHT);
 }
 
