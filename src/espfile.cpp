@@ -145,9 +145,9 @@ bool ESP::File::isMaster() const
   return m_MainRecord.flagSet(Record::FLAG_MASTER);
 }
 
-bool ESP::File::isLight() const
+bool ESP::File::isLight(const std::string &gameMode) const
 {
-  if (m_Header.version >= 0.96f ) {
+  if (gameMode == "starfield") {
     return m_MainRecord.flagSet(Record::SF_FLAG_LIGHT);
   }
   return m_MainRecord.flagSet(Record::FLAG_LIGHT);
@@ -163,7 +163,11 @@ bool ESP::File::isDummy() const
   return m_Header.numRecords == 0;
 }
 
-void ESP::File::setLight(bool enabled)
+void ESP::File::setLight(bool enabled, const std::string &gameMode)
 {
+  if (gameMode == "starfield") {
+    m_MainRecord.setFlag(Record::SF_FLAG_LIGHT, enabled);
+    return;
+  }
   m_MainRecord.setFlag(Record::FLAG_LIGHT, enabled);
 }

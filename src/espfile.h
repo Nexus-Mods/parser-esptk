@@ -33,10 +33,10 @@ public:
 
   bool isMaster() const;
   bool isMedium() const;
-  bool isLight() const;
+  bool isLight(const std::string &gameMode) const;
   bool isDummy() const;
 
-  void setLight(bool enabled);
+  void setLight(bool enabled, const std::string &gameMode);
 
   uint32_t revision() const { return m_MainRecord.revision(); }
 
