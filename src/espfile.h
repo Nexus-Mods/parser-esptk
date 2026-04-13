@@ -34,6 +34,7 @@ public:
   bool isMaster() const;
   bool isMedium() const;
   bool isLight(const std::string &gameMode) const;
+  bool isBlueprint() const;
   bool isDummy() const;
 
   void setLight(bool enabled, const std::string &gameMode);

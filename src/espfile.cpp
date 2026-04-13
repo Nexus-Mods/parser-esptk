@@ -158,6 +158,11 @@ bool ESP::File::isMedium() const
   return m_MainRecord.flagSet(Record::FLAG_MEDIUM);
 }
 
+bool ESP::File::isBlueprint() const
+{
+  return m_MainRecord.flagSet(Record::SF_FLAG_BLUEPRINT);
+}
+
 bool ESP::File::isDummy() const
 {
   return m_Header.numRecords == 0;
